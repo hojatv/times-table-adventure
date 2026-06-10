@@ -11,9 +11,9 @@
 	<groupId>com.hojat.learning</groupId>
 	<artifactId>times-table-adventure</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>times-table-adventure</name>
-	<description>Multiplication table games for level 2 students</description>
-	<url/>
+	<name>Einmaleins-Abenteuer / Times Table Adventure</name>
+	<description>A playful German multiplication game for kids to practice times tables with quizzes, memory, rocket races, coins, sounds, and best times.</description>
+	<url>https://github.com/hojatv/times-table-adventure</url>
 	<licenses>
 		<license>
 			<name>MIT License</name>
@@ -25,10 +25,10 @@
 		<developer/>
 	</developers>
 	<scm>
-		<connection/>
-		<developerConnection/>
+		<connection>scm:git:https://github.com/hojatv/times-table-adventure.git</connection>
+		<developerConnection>scm:git:https://github.com/hojatv/times-table-adventure.git</developerConnection>
 		<tag/>
-		<url/>
+		<url>https://github.com/hojatv/times-table-adventure</url>
 	</scm>
 	<properties>
 		<java.version>17</java.version>
