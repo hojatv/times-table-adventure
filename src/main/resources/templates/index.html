@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Einmaleins-Abenteuer</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<main class="app-shell">
+    <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+            <p class="eyebrow">Einmaleins-Training ab Klasse 2</p>
+            <h1 id="page-title">Einmaleins-Abenteuer</h1>
+            <p class="intro">Spiele kurze Aufgaben, sammle Sterne und werde schneller beim Einmaleins von 2 bis 12.</p>
+            <div class="mission-strip" aria-label="Missionen">
+                <span>⚡ Turbo rechnen</span>
+                <span>🪙 Münzen sammeln</span>
+                <span>🚀 Rakete starten</span>
+            </div>
+        </div>
+        <div class="score-board" aria-label="Aktueller Punktestand">
+            <span class="score-label">Sterne</span>
+            <strong id="stars">0</strong>
+        </div>
+    </section>
+
+    <section class="controls" aria-label="Spieleinstellungen">
+        <label>
+            Einmaleins-Reihe
+            <select id="table-select">
+                <option value="mixed">Gemischt</option>
+                <option value="2">2er-Reihe</option>
+                <option value="3">3er-Reihe</option>
+                <option value="4">4er-Reihe</option>
+                <option value="5">5er-Reihe</option>
+                <option value="6">6er-Reihe</option>
+                <option value="7">7er-Reihe</option>
+                <option value="8">8er-Reihe</option>
+                <option value="9">9er-Reihe</option>
+                <option value="10">10er-Reihe</option>
+                <option value="11">11er-Reihe</option>
+                <option value="12">12er-Reihe</option>
+            </select>
+        </label>
+
+        <div class="mode-picker" role="group" aria-label="Spielmodus">
+            <button class="mode active" type="button" data-mode="quiz"><span aria-hidden="true">✦</span>Schnelles Quiz</button>
+            <button class="mode" type="button" data-mode="memory"><span aria-hidden="true">◆</span>Memory</button>
+            <button class="mode" type="button" data-mode="race"><span aria-hidden="true">🚀</span>Raketenrennen</button>
+        </div>
+
+        <button id="reset-game" class="reset-button" type="button">Neu starten</button>
+    </section>
+
+    <section class="reward-panel" aria-label="Muenzenwertung">
+        <img class="reward-mascot" src="/img/speed-mascot.png" alt="Blauer Turbo-Fuchs mit Muenze">
+        <div>
+            <p class="eyebrow">Neue Wertung</p>
+            <h2>Turbo-Fuchs sammelt Münzen</h2>
+            <p>Gute Antworten bringen Münzen. Je schneller und genauer du spielst, desto voller wird der Schatz.</p>
+        </div>
+        <div class="coin-board">
+            <span class="score-label">Münzen</span>
+            <strong id="coins">0</strong>
+            <div id="coin-burst" class="coin-burst" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <section class="game-panel" aria-live="polite">
+        <div id="quiz-game" class="game active">
+            <p class="game-label">Löse die Aufgabe</p>
+            <h2 id="question">2 x 3 = ?</h2>
+            <div id="answers" class="answer-grid"></div>
+            <p id="quiz-feedback" class="feedback">Wähle die richtige Antwort.</p>
+        </div>
+
+        <div id="memory-game" class="game">
+            <p class="game-label">Finde zu jeder Aufgabe die passende Antwort</p>
+            <div id="memory-grid" class="memory-grid"></div>
+            <p id="memory-feedback" class="feedback">Finde alle passenden Paare.</p>
+        </div>
+
+        <div id="race-game" class="game">
+            <div class="race-stats" aria-label="Rennzeiten">
+                <span>Zeit: <strong id="race-time">0,0 s</strong></span>
+                <span>Bestzeit: <strong id="race-best">-</strong></span>
+            </div>
+            <div class="race-track">
+                <div id="rocket" class="rocket" aria-hidden="true">🚀</div>
+            </div>
+            <p class="game-label">Gib die Antwort ein und bring die Rakete ins Ziel</p>
+            <h2 id="race-question">4 x 5 = ?</h2>
+            <form id="race-form" class="race-form">
+                <input id="race-answer" inputmode="numeric" autocomplete="off" aria-label="Antwort fuer das Rennen">
+                <button type="submit">Start</button>
+            </form>
+            <p id="race-feedback" class="feedback">Antworte richtig, damit die Rakete weiterfliegt.</p>
+        </div>
+    </section>
+</main>
+<script src="/js/app.js"></script>
+</body>
+</html>
